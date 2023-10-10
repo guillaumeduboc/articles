@@ -2,7 +2,7 @@
 published: false
 title: 'Deploy a Lambda with a static IP for FREE'
 cover_image: 'https://raw.githubusercontent.com/guillaumeduboc/articles/master/blog-posts/free-static-ip/cover.png'
-description: 'FREE static IP for your AWS Lambda'
+description: 'A step-by-step guide and code snippets to assign a static IP to an AWS Lambda for free using the AWS CDK by extracting the Elastic Network Interface ID'
 tags: aws, serverless, javascript, tutorial
 ---
 
@@ -128,10 +128,11 @@ You can find the full code [here][free-static-ip-github].
 
 Make sure you enjoy your free static IP while it lasts. Elastic IPs will cost $3/month as of January 2024.
 
-Although this is great for reducing your costs, you should not use it for production environments. AWS might change the way they manage ENIs in the future and break your infrastructure.
+Although this is great for reducing your costs, you should not use it for production environments. AWS might change the way they manage ENIs in the future and break your infrastructure. Furthermore, [if you're Lambda is not used in a while AWS will delete the ENI][aws-heni-deletion]. To avoid this you can setup a cron job to keep the ENI.
 
 [nat-static-ip]: https://dev.to/slsbytheodo/deploying-a-lambda-with-a-static-ip-has-never-been-so-simple-5dke
 [bypassing-natgw]: https://theburningmonk.com/2023/09/static-ip-for-lambda-ingress-egress-and-bypassing-the-dreaded-nat-gateway/
 [aws-custom-resource]: https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.custom_resources.AwsCustomResource.html
 [aws-sdk-describe-eni]: https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/client/ec2/command/DescribeNetworkInterfacesCommand/
 [free-static-ip-github]: https://github.com/guillaumeduboc/free-static-ip/blob/main/lib/free-static-ip-stack.ts
+[aws-heni-deletion]: https://docs.aws.amazon.com/lambda/latest/dg/foundation-networking.html#:~:text=If%20a%20Lambda%20function%20remains%20idle%20for%20consecutive%20weeks%2C%20Lambda%20reclaims%20the%20unused%20Hyperplane%20ENIs
