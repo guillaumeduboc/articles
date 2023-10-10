@@ -1,7 +1,7 @@
 ---
 published: false
 title: 'Deploy a Lambda with a static IP for FREE 💸'
-cover_image: 'https://raw.githubusercontent.com/guillaumeduboc/articles/master/blog-posts/free-static-ip/cover.png'
+cover_image: 'https://raw.githubusercontent.com/guillaumeduboc/articles/master/blog-posts/free-static-ip/assets/cover.png'
 description: 'A step-by-step guide and code snippets to assign a static IP to an AWS Lambda for free using the AWS CDK by extracting the Elastic Network Interface ID'
 tags: aws, serverless, javascript, tutorial
 ---
